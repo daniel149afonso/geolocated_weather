@@ -7,13 +7,14 @@ html, body {
   
   #ville {
     text-transform: capitalize;
+    font-size: 2rem;
   }
   
   #temperature {
-    font-size: 4em;
+    font-size: 3rem;
   }
   
   #changer {
-    background: rgba(178, 223, 251, .3);
+
     cursor: pointer;
   }

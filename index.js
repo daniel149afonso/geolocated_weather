@@ -50,11 +50,12 @@ function error() {
 }
 //Changer de ville avec le boutton
 changerDeVille.addEventListener('click', () => {
-  villeChoisie = prompt('Quelle ville souhaitez-vous voir ?');
+  villeChoisie = prompt('Which city do you want ?');
   recevoirTemperature(villeChoisie);
 });
 
 function recevoirTemperature(ville) {
+  ville = ville.trim(); // ⚠️ enlève les espaces inutiles
   const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + ville + '&appid=dc8c9152e8adaad0ec8bf635818c0d42&units=metric';
 
   let requete = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
@@ -75,7 +76,7 @@ function recevoirTemperature(ville) {
         document.querySelector('#ville').textContent = ville;
       }
       else {
-        alert('Un problème est intervenu, merci de revenir plus tard.');
+        alert("Enter a valid city please.");
       }
     }
   }
